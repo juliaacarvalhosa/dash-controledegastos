@@ -1,0 +1,95 @@
+/* CSS EXTERNO */
+
+body {
+    background-color: black;
+    color: #ffff;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Esta classe pode ser removida se não estiver sendo usada */
+.texto1 {
+    color: blue;
+}
+
+/* Estilização dos gráficos */
+.bar-chart {
+    width: 40% !important;
+}
+
+.pie-chart {
+    width: 40% !important;
+}
+
+/* Container principal para tabela e gráficos */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+/* Container para a tabela */
+.table-container {
+    width: 30%; /* Ajuste a largura conforme necessário */
+    padding: 10px;
+    display: inline-block; /* Mudança para inline-block */
+    color: #000 !important;
+    margin-top: 2%;
+}
+
+/* Removido o overflowY inline e aplicado aqui para a tabela */
+.table-container .dash-spreadsheet-container {
+    height: 300px; /* Altura do container da tabela */
+    overflow-y: auto; /* Permite a rolagem se necessário */
+}
+
+/* Container para os gráficos */
+.graphs-container {
+    margin-left: 2%;
+    width: 45%; /* Ajuste a largura conforme necessário */
+    padding: 10px;
+    display: inline-block; /* Mudança para inline-block */
+    vertical-align: top; /* Alinha os gráficos ao topo */
+}
+
+/* Estilo para cada gráfico para garantir o espaçamento adequado entre eles */
+.dcc-graph {
+    margin-bottom: 20px; /* Adiciona espaço entre os gráficos */
+}
+
+/* Estilização da label-inserir */
+.label-inserir {
+    font-family: 'Arial', sans-serif; /* Ajuste o tipo de fonte conforme necessário */
+}
+
+
+.label-receitas{
+    margin-top: 2%;
+
+}
+
+.label-container {
+    width: 100%; 
+    display: inline-block;
+    color: white;
+    font-family: 'Arial', sans-serif; 
+    align-items: center;
+    margin-top: 4%!important;
+}
+
+.dropdown-despesas{
+    width: 30%;
+    margin-top: 2%;
+}
+
+.receita-despesa{
+    margin-top: 5%;
+}
+
+.receita-despesa2{
+    margin-bottom: 5%;
+}
