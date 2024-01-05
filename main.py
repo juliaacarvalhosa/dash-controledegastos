@@ -69,24 +69,29 @@ app.layout = html.Div(children=[
     html.H1('Controle de Gastos Pessoal', className='title'),
     html.Div([
         html.Div([
-            dash_table.DataTable(
+            html.Div([
+                dash_table.DataTable(
                 id='table',
                 columns=[{"name": i, "id": i} for i in table_data.columns],
                 data=table_data.to_dict('records'),
                 style_table={'overflowY': 'auto'},
                 style_cell={'textAlign': 'center'},  # Centraliza o texto nas células
-            ),
+                )
+            ], className='table-container'),
             html.Div([
-               html.Div([
-                   html.Label("Inserir nova Receita", style={'color' : '#ffff'}, className='receita-despesa2'),
-                   dcc.Dropdown(id='receita')
-               ], className='receita-despesa col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6'),
-               html.Div([
+               dbc.Form([
+                   html.Div([
                    html.Label("Inserir nova Despesa", style={'color' : '#ffff'}, className='receita-despesa2'),
-                   dcc.Dropdown(id='despesa')
-               ], className='receita-despesa col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6')
-            ], className='row') 
-        ], className='table-container', style={'width': '40%', 'display': 'inline-block'}),  
+                   dcc.Dropdown(id='receita')
+               ], className='receita-despesa d-flex'),
+               html.Div([
+                   html.Label("Quantia", style={'color' : '#ffff'}, className='receita-despesa2'),
+                   dcc.Input(id='quantia') 
+               ], className='receita-despesa'),
+                    dbc.Button('Inserir', id='button-inserir', color='primary', className='botao-inserir')
+            ]) 
+        ], className='table-container', style={'display': 'inline-block'})
+               ], className='div-tabela'),  
         html.Div([
             dcc.Graph(id='graph1', figure=create_bar_figure(categories, data, colors)),
             dcc.Graph(id='graph2', figure=create_pie_figure(categories, data))

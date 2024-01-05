@@ -34,23 +34,25 @@ body {
 
 /* Container para a tabela */
 .table-container {
-    width: 30%; /* Ajuste a largura conforme necessário */
+    width: 100% !important; /* Ajuste a largura conforme necessário */
     padding: 10px;
     display: inline-block; /* Mudança para inline-block */
-    color: #000 !important;
     margin-top: 2%;
+    color: #fefefe !important;
+    border-left: 1px #ffff;
 }
 
 /* Removido o overflowY inline e aplicado aqui para a tabela */
 .table-container .dash-spreadsheet-container {
     height: 300px; /* Altura do container da tabela */
     overflow-y: auto; /* Permite a rolagem se necessário */
+    background-color: #000;
 }
 
 /* Container para os gráficos */
 .graphs-container {
     margin-left: 2%;
-    width: 45%; /* Ajuste a largura conforme necessário */
+    width: 50% !important; /* Ajuste a largura conforme necessário */
     padding: 10px;
     display: inline-block; /* Mudança para inline-block */
     vertical-align: top; /* Alinha os gráficos ao topo */
@@ -88,8 +90,72 @@ body {
 
 .receita-despesa{
     margin-top: 5%;
+    flex-direction: column !important;
+    width: 100%;
+    
 }
 
 .receita-despesa2{
-    margin-bottom: 5%;
+    margin-bottom: 2%;
+   
+}
+
+.receita-despesa label{
+    width: 100% !important;
+}
+
+.receita-despesa input{
+    width: 100%;
+}
+
+.botao-inserir{
+    background-color: #e5e5e5;
+    color: #000;
+    width: 100%;
+    border-radius: 4px;
+    border-color: #f2f2f2;
+    margin-top: 8px;
+}
+
+.botao-inserir:hover{
+    background-color: #737373 !important;
+    color: #ffff !important;
+    width: 100% !important;
+    border-radius: 4px;
+    border-color: #525252 !important;
+}
+
+.div-tabela{
+    width: 35%;
+    margin-top: 0,5%;
+}
+
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner td {
+    background-color: #000;
+}
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner th {
+    background-color: #000;
+    border: none;
+}
+
+/* Estiliza a barra de rolagem para o container da tabela Dash */
+.dash-spreadsheet-container::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+.dash-spreadsheet-container::-webkit-scrollbar-track {
+    background: #000; /* Cor de fundo da trilha da barra de rolagem */
+}
+
+.dash-spreadsheet-container::-webkit-scrollbar-thumb {
+    background: #ffff; /* Cor da barra de rolagem */
+    border-radius: 4px;
+}
+
+.dash-spreadsheet-container::-webkit-scrollbar-thumb:hover {
+    background: #525252; /* Cor da barra de rolagem quando passa o mouse */
+}
+
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner{
+    border-left: 1px solid #ffff;
 }
