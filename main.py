@@ -79,16 +79,41 @@ app.layout = html.Div(children=[
                 )
             ], className='table-container'),
             html.Div([
+                html.Div([
+                    html.Label('Renda Mensal Total: ', style={'color' : '#ffff'}, className='renda-total'),
+                    html.Label('R$2583,96', style={'color' : '#ffff'}, className='valor-renda'),
+                    html.Br(),
+                    html.Label('Total Gastos Mensais: ', style={'color' : '#fff'}, className='renda-total'),
+                    html.Label('R$1569,63', style={'color':'#fff'}, className='valor-renda'),
+                    html.Br(),
+                    html.Label('Total Saldo: ', style={'color' : '#ffff'}, className='renda-total'),
+                    html.Label('R$1014,33', style={'color':'#fff'}, className='valor-renda')
+                ]),
                dbc.Form([
                    html.Div([
-                   html.Label("Inserir nova Despesa", style={'color' : '#ffff'}, className='receita-despesa2'),
-                   dcc.Dropdown(id='receita')
+                   html.Label("Inserir Nova Despesa", style={'color' : '#ffff'}, className='receita-despesa2'),
+                   dcc.Dropdown(id='despesa')
                ], className='receita-despesa d-flex'),
                html.Div([
                    html.Label("Quantia", style={'color' : '#ffff'}, className='receita-despesa2'),
                    dcc.Input(id='quantia') 
                ], className='receita-despesa'),
-                    dbc.Button('Inserir', id='button-inserir', color='primary', className='botao-inserir')
+                    dbc.Button('Inserir', id='button-inserir', color='primary', className='botao-inserir'),
+                dbc.Form([
+                    html.Div([
+                    html.Label("Inserir Nova Receita", style={'color' : '#ffff'}, className='receita-despesa2'),
+                    dcc.Input(id='receita')
+                    ], className='receita-despesa'),
+                    dbc.Button('Inserir', id='botao-inserir-receita', color='primary', className='botao-inserir')
+                ]),
+                dbc.Form([
+                    html.Div([
+                        html.Label('Novas Categorias', style={'color' : '#ffff'}, className='receita-despesa2'),
+                        dcc.Input(id='categoria')
+                    ], className='receita-despesa'),
+                    dbc.Button('Inserir', id='botao-categoria', color='primary', className='botao-inserir')
+                ])
+                
             ]) 
         ], className='table-container', style={'display': 'inline-block'})
                ], className='div-tabela'),  

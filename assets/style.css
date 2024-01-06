@@ -149,13 +149,37 @@ body {
 
 .dash-spreadsheet-container::-webkit-scrollbar-thumb {
     background: #ffff; /* Cor da barra de rolagem */
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .dash-spreadsheet-container::-webkit-scrollbar-thumb:hover {
-    background: #525252; /* Cor da barra de rolagem quando passa o mouse */
+    background: #737373; /* Cor da barra de rolagem quando passa o mouse */
 }
 
 .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner{
     border-left: 1px solid #ffff;
+}
+
+
+.renda-total{
+    color: #fff;
+    margin-right: 6px;
+}
+
+
+body::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+body::-webkit-scrollbar-track::-webkit-scrollbar-track {
+    background: #737373; /* Cor de fundo da trilha da barra de rolagem */
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #ffff; /* Cor da barra de rolagem */
+    border-radius: 2px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #525252; /* Cor da barra de rolagem quando passa o mouse */
 }
