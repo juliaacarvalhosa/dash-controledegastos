@@ -30,6 +30,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: start;
+    margin-bottom: 32px;
 }
 
 /* Container para a tabela */
@@ -133,6 +134,7 @@ body {
 .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner td {
     background-color: #000;
 }
+
 .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner th {
     background-color: #000;
     border: none;
