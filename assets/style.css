@@ -29,15 +29,31 @@ body {
 .main-container {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: start;
     margin-bottom: 32px;
 }
 
-/* Container para a tabela */
-.table-container {
+/* Container para os valores da tabela */
+.table-container-value {
+    font-size: 24px;
     width: 100% !important; /* Ajuste a largura conforme necessário */
     padding: 10px;
+    display: flex; /* Mudança para inline-block */
+    justify-content: center;
+    margin: 2% 0;
+    color: #fefefe !important;
+    border-left: 1px #ffff;
+}
+
+/* Container para a tabela */
+.table-container {
+    font-size: 32px;
+    width: 50% !important; /* Ajuste a largura conforme necessário */
+    min-height: 10px !important;
+    padding: 10px;
     display: inline-block; /* Mudança para inline-block */
+    justify-content: center;
     margin-top: 2%;
     color: #fefefe !important;
     border-left: 1px #ffff;
@@ -52,11 +68,20 @@ body {
 
 /* Container para os gráficos */
 .graphs-container {
-    margin-left: 2%;
-    width: 50% !important; /* Ajuste a largura conforme necessário */
+    width: 100% !important; /* Ajuste a largura conforme necessário */
     padding: 10px;
-    display: inline-block; /* Mudança para inline-block */
+    display: flex; /* Mudança para flex */
+    align-items: center;
+    justify-content: space-around;
     vertical-align: top; /* Alinha os gráficos ao topo */
+}
+
+.graphs-bar{
+    width: 40%;
+}
+
+.graphs-pizza{
+    width: 40%;
 }
 
 /* Estilo para cada gráfico para garantir o espaçamento adequado entre eles */
@@ -69,6 +94,11 @@ body {
     font-family: 'Arial', sans-serif; /* Ajuste o tipo de fonte conforme necessário */
 }
 
+
+.receitas-geral{
+    width: 30%;
+    display: block;
+}
 
 .label-receitas{
     margin-top: 2%;
@@ -127,12 +157,19 @@ body {
 }
 
 .div-tabela{
-    width: 35%;
-    margin-top: 0,5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 93%;
+    margin-bottom: 5%;
+    margin-right: 7%;
 }
 
+
+/*Bugado*/
 .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner td {
-    background-color: #000;
+    background-color: #000000;
 }
 
 .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner th {
