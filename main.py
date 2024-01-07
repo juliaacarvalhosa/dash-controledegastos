@@ -8,7 +8,13 @@ from app import app, categories, data, colors, table_data, palavras_aleatorias
 from graphs import create_bar_figure
 from template import template
 
+from database import criar_conexao
+
+criar_conexao()
 app.layout = template()
+
+
+
 
 # Callbacks
 @app.callback(

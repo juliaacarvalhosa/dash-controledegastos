@@ -4,6 +4,7 @@ import numpy as np
 import random 
 import string 
 import dash_bootstrap_components as dbc
+import sqlite3
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
