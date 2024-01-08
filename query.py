@@ -4,61 +4,58 @@ con = lite.connect('dados.db')
 
 #INSERT 
 def insert_categoria(nome : str):
-    query = "INSERT INTO Categoria (nome) VALUES (?)"
-
-    with con,con.cursor() as cur:
-        cur.execute(query, (nome))
+    with con:
+        cur = con.cursor()
+        cur.execute(f'INSERT INTO Categoria (nome) VALUES ("{nome}")'
+)
 
 def insert_receita(valor : float):
-    query = "INSERT INTO Receita (valor) VALUES (?)"
-
-    with con,con.cursor() as cur:
-        cur.execute(query, (valor))
+    with con:
+        cur = con.cursor()
+        cur.execute(f'INSERT INTO Receita (valor) VALUES ("{valor}")')
 
 def insert_gastos(categoria : str, valor : float):
-    query = "INSERT INTO Gastos (categoria, valor) VALUES (?, ?)"
-
-    with con,con.cursor() as cur:
-        cur.execute(query, (categoria, valor))
+    with con:
+        cur = con.cursor()
+        cur.execute(f'INSERT INTO Gastos (categoria, valor) VALUES ("{categoria}", "{valor}")')
     
 #DELETE
 def delete_receita(id : int):
-    query = "DELETE FROM Receita WHERE id = ?"
-    
-    with con, con.cursor() as cur:
-        cur.execute(query, (id,))
+   with con:
+        cur = con.cursor()
+        cur.execute(f'DELETE FROM Receita WHERE id = ("{id}")')
 
 def delete_gastos(id : int):
-    query = "DELETE FROM Gastos WHERE id = ?"
-    
-    with con, con.cursor() as cur:
-        cur.execute(query, (id,))
+    with con:
+        cur = con.cursor()
+        cur.execute(f'DELETE FROM Gastos WHERE id = ("{id}")')
 
 
 #SELECT
 def select_categoria():
-    query = "SELECT * FROM Categoria"
-
-    with con, con.cursor as cur:
-        cur.execute(query)
+    with con:
+        cur = con.cursor()
+        cur.execute("SELECT * FROM Categoria")
         categorias = cur.fetchall()
 
     return categorias
 
 def select_receita():
-    query = "SELECT * FROM Receita"
-
-    with con, con.cursor as cur:
-        cur.execute(query)
+    with con:
+        cur = con.cursor()
+        cur.execute("SELECT * FROM Receita")
         receitas = cur.fetchall()
 
     return receitas
 
 def select_gastos():
-    query = "SELECT * FROM Gastos"
-
-    with con. con.cursor as cur:
-        cur.execute(query)
+    with con:
+        cur = con.cursor()
+        cur.execute("SELECT * FROM Gastos")
         gastos = cur.fetchall()
     return gastos
 
+
+print(select_categoria())
+print(select_gastos())
+print(select_receita())

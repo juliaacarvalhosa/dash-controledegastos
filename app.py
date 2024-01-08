@@ -4,7 +4,9 @@ import numpy as np
 import random 
 import string 
 import dash_bootstrap_components as dbc
-import sqlite3
+
+from query import select_receita, select_categoria
+
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -21,4 +23,15 @@ quantidade_de_palavras = 20
 
 palavras_aleatorias = [''.join(random.choice(string.ascii_lowercase) for _ in range(tamanho_da_palavra)) for _ in range(quantidade_de_palavras)]
 
-table_data = pd.DataFrame(columns=['Id', 'Categoria', 'Quantia'])
+categorias = select_categoria()
+receitas = select_receita()
+
+df_categorias = pd.DataFrame(categorias, columns=['Id', 'Categoria'])
+df_receitas = pd.DataFrame(receitas, columns=['Id', 'Receita'])
+
+
+table_data = pd.merge(df_categorias, df_receitas, on='Id', how='outer')
+
+print(table_data)
+
+
