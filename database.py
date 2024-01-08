@@ -1,18 +1,17 @@
-import sqlite3
+import sqlite3 as lite
 
-def criar_conexao():
-    # Cria ou conecta ao banco de dados
-    conn = sqlite3.connect('seu_banco_de_dados.db')
-    cursor = conn.cursor()
+con = lite.connect('dados.db')
 
-    # Criação da tabela se não existir
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS gastos (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            categoria TEXT,
-            quantia INTEGER
-        )
-    ''')
+#CRIAÇÃO DAS TABELAS
 
-    conn.commit()
-    conn.close()
+with con:
+    cur=con.cursor()
+    cur.execute('CREATE TABLE Categoria(id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT)')
+
+with con:
+    cur = con.cursor()
+    cur.execute('CREATE TABLE Receita(id INTEGER PRIMARY KEY AUTOINCREMENT, valor DECIMAL)')
+
+with con:
+    cur = con.cursor()
+    cur.execute('CREATE TABLE Gastos(id INTEGER PRIMARY KEY AUTOINCREMENT, categoria TEXT, valor DECIMAL)')
