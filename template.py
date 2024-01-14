@@ -5,19 +5,9 @@ import pandas as pd
 from dash import html, dcc, dash_table
 import dash_bootstrap_components as dbc
 
-from app import categories, data, colors, table_data, palavras_aleatorias
+from app import categories, data, colors, table_data
 from graphs import create_bar_figure, create_pie_figure
 
-def add_table_row():
-    global table_data
-    new_row = {'Id': len(table_data) + 1,
-            'Categoria': random.choice(palavras_aleatorias),
-            'Quantia': np.random.randint(100, 500)}
-    # Alteração correta
-    table_data = pd.concat([table_data, pd.DataFrame([new_row])], ignore_index=True)
-
-for _ in range(10):
-        add_table_row()
 
 def template():
     return html.Div(children=[

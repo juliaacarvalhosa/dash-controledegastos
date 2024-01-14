@@ -1,16 +1,12 @@
 from dash import Dash
 import pandas as pd
-import numpy as np
-import random 
-import string 
 import dash_bootstrap_components as dbc
+import numpy as np
 
-from query import select_receita, select_categoria
-
+from query import select_receita, select_categoria, select_gastos
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
-np.random.seed(69)
 
 data = np.random.randint(100, 500, 3)
 
@@ -18,20 +14,16 @@ categories = ['Renda', 'Saldo', 'Despesas']
 
 colors = ['blue', 'red', 'green']
 
-tamanho_da_palavra = 8
-quantidade_de_palavras = 20
-
-palavras_aleatorias = [''.join(random.choice(string.ascii_lowercase) for _ in range(tamanho_da_palavra)) for _ in range(quantidade_de_palavras)]
 
 categorias = select_categoria()
 receitas = select_receita()
+gastos = select_gastos()
 
-df_categorias = pd.DataFrame(categorias, columns=['Id', 'Categoria'])
-df_receitas = pd.DataFrame(receitas, columns=['Id', 'Receita'])
+df_categorias = pd.DataFrame(categorias, columns=['Id', 'Nome'])
+df_receitas = pd.DataFrame(receitas, columns=['Id', 'Valor', 'IdCategoria'])
+df_gastos = pd.DataFrame(gastos, columns=['Id', 'Categoria', 'Valor', 'IdCategoria'])
 
 
-table_data = pd.merge(df_categorias, df_receitas, on='Id', how='outer')
+table_data = pd.merge(df_categorias, df_gastos, left_on='Id', right_on='IdCategoria', how='outer')
 
 print(table_data)
-
-

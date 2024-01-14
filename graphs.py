@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 
-from app import palavras_aleatorias, table_data
 
 # Função para criar gráficos
 def create_bar_figure(categories, data, colors):
