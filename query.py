@@ -33,7 +33,6 @@ def delete_gastos(id : int):
 
 
 #SELECT
-# SELECT
 def select_categoria():
     with con:
         cur = con.cursor()
@@ -57,20 +56,30 @@ def select_gastos():
         gastos = cur.fetchall()
     return gastos
 
+#LABEL RENDA TOTAL
+def renda_total():
+    with con:
+        cur = con.cursor()
+        cur.execute("SELECT SUM(valor) AS renda_total FROM Receita")
+        renda = cur.fetchall()
+    return renda
 
-# Inserir Categorias
-insert_categoria("Alimentação")
-insert_categoria("Transporte")
-insert_categoria("Lazer")
+print(renda_total())
 
-# Inserir Receitas
-insert_receita(1000.50, 1)  # Valor: 1000.50, Categoria ID: 1
-insert_receita(500.75, 2)   # Valor: 500.75, Categoria ID: 2
-insert_receita(200.00, 1)   # Valor: 200.00, Categoria ID: 1
+def gasto_total():
+    with con:
+        cur = con.cursor()
+        cur.execute("SELECT SUM(valor) AS renda_total FROM Gastos")
+        gasto = cur.fetchall()
+    return gasto
 
-# Inserir Gastos
-insert_gastos("Restaurante", 50.20, 1)   # Categoria: Restaurante, Valor: 50.20, Categoria ID: 1
-insert_gastos("Gasolina", 30.50, 2)      # Categoria: Gasolina, Valor: 30.50, Categoria ID: 2
-insert_gastos("Cinema", 20.00, 3)        # Categoria: Cinema, Valor: 20.00, Categoria ID: 3
+print(gasto_total())
 
-print('Dados inseridos com sucesso!')
+def saldo_total():
+    with con:
+        cur = con.cursor()
+        cur.execute("SELECT (SELECT SUM(valor) FROM Receita) - (SELECT SUM(valor) FROM Gastos AS Saldo)")
+        saldo = cur.fetchall()
+    return saldo
+
+print(saldo_total())

@@ -7,7 +7,7 @@ import dash_bootstrap_components as dbc
 
 from app import categories, data, colors, table_data
 from graphs import create_bar_figure, create_pie_figure
-
+from query import renda_total, gasto_total, saldo_total
 
 def template():
     return html.Div(children=[
@@ -20,13 +20,13 @@ def template():
             html.Div([
                 html.Div([
                     html.Label('Renda Mensal Total: ', style={'color': '#ffff'}, className='renda-total'),
-                    html.Label('R$ 2583,96', style={'color': '#ffff'}, className='valor-renda'),
+                    html.Label(str(renda_total()[0][0]), style={'color': '#ffff'}, className='valor-renda'),
                     html.Br(),
                     html.Label('Total Gastos Mensais: ', style={'color': '#fff'}, className='renda-total'),
-                    html.Label('R$ 1569,63', style={'color': '#fff'}, className='valor-renda'),
+                    html.Label(str(gasto_total()[0][0]), style={'color': '#fff'}, className='valor-renda'),
                     html.Br(),
                     html.Label('Total Saldo: ', style={'color': '#ffff'}, className='renda-total'),
-                    html.Label('R$ 1014,33', style={'color': '#fff'}, className='valor-renda')
+                    html.Label(str(saldo_total()[0][0]), style={'color': '#fff'}, className='valor-renda')
                     ]),
                 ], className='table-container-value'),
             html.Div([
