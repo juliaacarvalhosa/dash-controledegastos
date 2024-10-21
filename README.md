@@ -1,23 +1,65 @@
-# Dashboard para Controle de Gastos
-## Protótipo Nibby
-Protótipo do [Nibby](https://nibby.fuzzylab.tech), site que foi desenvolvido para auxiliar no controle de gastos financeiros. Ele apresenta gráficos e tabelas que detalham os gastos por categoria, além de mostrar o percentual de despesas em relação à receita mensal.
 
-<div>
-    <td>
-        <img src="https://media.discordapp.net/attachments/986647375869251596/1232411883395481780/image.png?ex=66295c82&is=66280b02&hm=3a9a1b1e0390464f65bc3cd627b582a52d0c8be0f8efce8da1f7af54e40d7fe1&=&format=webp&quality=lossless&width=854&height=468" alt="icon" width="1000" height="400" />
-      </td>
-</div>
+# Projeto de Dashboard Financeiro
+
+Este projeto é um protótipo do [Nibby](https://nibby.fuzzylab.tech), um site desenvolvido para auxiliar no controle de gastos financeiros. Ele apresenta gráficos e tabelas que detalham os gastos por categoria, além de mostrar o percentual de despesas em relação à receita mensal.
+
+## Funcionalidades
+
+- Visualização de receitas e gastos
+- Tabelas dinâmicas de dados financeiros
+- Gráficos interativos usando o Dash e o Plotly
+- Estilização usando Bootstrap para um layout responsivo
+
+## Pré-requisitos
+
+Antes de rodar o projeto, você precisará ter o Python instalado e alguns pacotes. Para instalar as dependências, siga as instruções abaixo:
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd seu-repositorio
+   ```
+
+2. Crie um ambiente virtual e ative-o:
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Para Windows use: venv\Scripts\activate
+   ```
+
+3. Instale as dependências necessárias:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Como rodar o projeto
+
+Depois de instalar as dependências, você pode rodar o projeto localmente:
+
+```bash
+python main.py
+```
+
+O servidor será iniciado em `http://127.0.0.1:8050/`. Abra o navegador e visite essa URL para acessar o dashboard.
+
+## Estrutura do Projeto
+
+- `app.py`: Arquivo principal que inicia o servidor Dash e define o layout do dashboard.
+- `assets/`: Pasta que contém arquivos estáticos, como estilos CSS.
+- `query.py`: Contém as funções de consulta para buscar dados financeiros de receitas, gastos e categorias.
+- `requirements.txt`: Lista de dependências necessárias para rodar o projeto.
+
+## Tecnologias Utilizadas
+
+- [Dash](https://plotly.com/dash/) - Framework para construção de aplicações web interativas.
+- [Pandas](https://pandas.pydata.org/) - Manipulação e análise de dados.
+- [Plotly](https://plotly.com/) - Biblioteca para criação de gráficos interativos.
+- [Bootstrap](https://getbootstrap.com/) - Framework para estilização responsiva.
 
 
 
-
-## DER
-
-<div>
-    <td>
-        <img src="https://media.discordapp.net/attachments/896194221235646505/1232379868977696872/DER.png?ex=66293eb1&is=6627ed31&hm=9dcacd514c36be52beb5b65e942772076644a036816a843916c3a4853b4d4a7d&=&format=webp&quality=lossless" alt="icon" width="400" height="400" />
-      </td>
-</div>
 
 
 
